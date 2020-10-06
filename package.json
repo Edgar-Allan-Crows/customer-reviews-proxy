@@ -4,7 +4,7 @@
   "description": "This is the proxy server for the Radiant Dearth product detail page",
   "main": "index.js",
   "scripts": {
-    "run": "node server/index.js",
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
