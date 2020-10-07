@@ -11,7 +11,9 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(express.static(__dirname + '/../dist'));
 
-// Redirect http requests here
+// Redirect product image http requests here
+
+// Redirect customer reviews http requests here
 app.use('/api/reviews', createProxyMiddleware({ target: 'http://127.0.0.1:3004/', changeOrigin: true }));
 app.use('/api/totalScore', createProxyMiddleware({ target: 'http://127.0.0.1:3004/', changeOrigin: true }));
 app.use('/api/reviewCount', createProxyMiddleware({ target: 'http://127.0.0.1:3004/', changeOrigin: true }));
