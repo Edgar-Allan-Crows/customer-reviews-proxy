@@ -12,6 +12,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(express.static(__dirname + '/../dist'));
 
 // Redirect product image http requests here
+app.use('/gallery/:product_id/:metal/:cut/:carat', createProxyMiddleware({ target: 'http://127.0.0.1:3030/', changeOrigin: true }));
 
 // Redirect customer reviews http requests here
 app.use('/api/reviews', createProxyMiddleware({ target: 'http://127.0.0.1:3004/', changeOrigin: true }));
